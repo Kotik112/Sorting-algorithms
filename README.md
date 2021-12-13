@@ -32,4 +32,4 @@ av input, inte bara slumpmässig utan också redan sorterad, omvänt sorterad oc
 “nästan sorterad”.
 
 ## 4 Extra uppgifter
- Skriv en sorteringsalgoritm som går snabbare än n log n i det allmänna fallet.
+- Skriv en sorteringsalgoritm som går snabbare än n log n i det allmänna fallet.
