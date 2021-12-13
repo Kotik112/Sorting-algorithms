@@ -29,7 +29,7 @@ static void array_swap(int* array, int idx_a, int idx_b) {
 /** Turns an array into a "tree" of sorts, where the parent is always larger 
     than the children. */ 
 static void heapify(int* array, int length, int idx) {
-    int root = array[0]; 
+    //int root = array[0]; 
     int largest = idx; //initialize as root
     int left = heap_node_left_child(idx);
     int right = heap_node_right_child(idx);
