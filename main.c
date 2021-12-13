@@ -43,6 +43,67 @@ int main(int argc, char **argv) {
         }
     }
 
+ 
+    while(1) {
+        print_menu();
+        int user_input = get_int_input("Enter you choice (1-10): ");
+
+        switch (user_input)
+        {
+        /* Create random array. */
+        case 1:
+            /* code */
+            break;
+
+        /* Create sorted array. */
+        case 2:
+            /* code */
+            break;
+
+        /* Create reversed array. */
+        case 3:
+            /* code */
+            break;
+
+        /* Create "almost" sorted array. */
+        case 4:
+            /* code */
+            break;
+
+        /* Sort using 'Heap Sort' */
+        case 5:
+            /* code */
+            break;
+
+        /* Sort using 'Heap Sort' */
+        case 6:
+            /* code */
+            break;
+
+        /* Sort using 'Heap Sort' */
+        case 7:
+            /* code */
+            break;
+
+        /* Sort using 'Heap Sort' */
+        case 8:
+            /* code */
+            break;
+
+        /* Sort using 'Heap Sort' */
+        case 9:
+            /* code */
+            break;
+
+        /* Exit program. */
+        case 10:
+            printf("Exiting program!\n");
+            exit(0);
+        
+        default:
+            break;
+        }
+    }
 /*    clock_t start_t, end_t, total_t;
     
     int size_n = 0;
