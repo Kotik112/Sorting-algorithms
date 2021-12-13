@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-#define RUN_TESTS 1
+#define RUN_TESTS 0
 
 /** Given an index in an array with a heap, return its parent index. */
 static int heap_node_parent(int child_idx) {
@@ -77,7 +77,7 @@ void print_array(int* array, int length) {
 }
     
 
-int main(int argc, char *argv) {
+/* int main(int argc, char *argv) {
     
 
     if (RUN_TESTS) {
@@ -166,12 +166,13 @@ int main(int argc, char *argv) {
         print_array(test_heap_2, 16);
         
         printf("Done!\n\n");
-/* 
+
         size_t length = sizeof(test_heap_2, test_heap_2[0]);
-        print_array(test_heap_2, length); */
+        print_array(test_heap_2, length); 
     }
 
 
        
     return 0;
 }
+ */
