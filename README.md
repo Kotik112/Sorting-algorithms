@@ -1,0 +1,2 @@
+# Grupp inlamning - algoritm
+ 
