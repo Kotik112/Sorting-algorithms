@@ -4,17 +4,19 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define MAX_ARRAY_SIZE 1000000000
+
 void print_menu(void) {
     printf("*****\t MAIN MENU \t*****\n\n");
     printf("\t1. Create random array.\n");
     printf("\t2. Create sorted array.\n");
     printf("\t3. Create reversed array.\n");
     printf("\t4. Create almost sorted array.\n");
-    printf("\t6. Sort using 'Heap Sort'. - Arman\n");
-    printf("\t7. Sort using 'Selection Sort'. - Unn\n");
-    printf("\t8. Sort using 'Merge Sort'. - Jakob\n"); 
-    printf("\t9. Sort using 'qsort()'.\n");
-    printf("\t10. Exit program.\n");
+    printf("\t5. Sort using 'Heap Sort'. - Arman\n");
+    printf("\t6. Sort using 'Selection Sort'. - Unn\n");
+    printf("\t7. Sort using 'Merge Sort'. - Jakob\n"); 
+    printf("\t8. Sort using 'qsort()'.\n");
+    printf("\t9. Exit program.\n");
     printf("\n");
 }
 
@@ -27,23 +29,26 @@ int get_int_input(const char* text) {
 }
 
 int main(int argc, char **argv) {
-    int array_size[4];
+    /* Place holder for current working array. */
+    int * current_array = (int) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+
+    int arguments[4];
     if(argc < 1 || argc > 5) {
         fprintf(stderr, "Error! You must specify 1-5 arguments for the length of the arrays.\n");
         return -1;
     }
     else{
         for(int i = 1; i < argc; i++) {
-            array_size[i-1] = atoi(argv[i]);
+            arguments[i-1] = atoi(argv[i]);
         }
         /* For testing purposes. */
-        for(int i = 0; i < sizeof(array_size); i++) {
-            printf("%d ", array_size[i]);
+        for(int i = 0; i < sizeof(arguments); i++) {
+            printf("%d ", arguments[i]);
             printf("\n");
         }
     }
-
- 
+    /* Variables for storing the time delta for the storting algorithms. */
+    clock_t start_t, end_t, total_t;
     while(1) {
         print_menu();
         int user_input = get_int_input("Enter you choice (1-10): ");
@@ -52,7 +57,12 @@ int main(int argc, char **argv) {
         {
         /* Create random array. */
         case 1:
-            /* code */
+            int array_len = get_int_input("Input the length of the array: ");
+            if (array_len < MAX_ARRAY_SIZE) {
+                fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
+            }
+            int * random_array = create_random_array(array_len);
+            current_array = random_array;
             break;
 
         /* Create sorted array. */
@@ -72,7 +82,10 @@ int main(int argc, char **argv) {
 
         /* Sort using 'Heap Sort' */
         case 5:
-            /* code */
+            start_t = (double) clock();
+            int * sorted_array = heap_sort(current_array, array_len);
+            end_t = (double) clock();
+
             break;
 
         /* Sort using 'Heap Sort' */
