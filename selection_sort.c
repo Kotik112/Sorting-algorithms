@@ -8,6 +8,12 @@ void swap(int *x_ptr,int *y_ptr) {
     *y_ptr = tmp;
 }
 
+void swap_char(char *x_ptr,char *y_ptr) {
+    char tmp = *x_ptr;
+    *x_ptr = *y_ptr;
+    *y_ptr = tmp;
+}
+
 
 static int *create_array(int size_n) {
   int *array = malloc(sizeof(int) * size_n);
