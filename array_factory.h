@@ -15,6 +15,7 @@ int * create_reverse_sorted_array(int size_n);
 
 /* Creates an array of length size_n with random numbers,
         then sorts most of the array before returning it. */
-int * create_almost_sorted_array(int size_n);
+
+int * create_almost_sorted_array(int array_len, int elements_to_ignore);
 
 #endif

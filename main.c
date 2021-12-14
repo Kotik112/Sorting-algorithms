@@ -1,5 +1,9 @@
+/* 
+TODO:
+Lösa reversed array i array factory.
+ */
+
 #include "heapsort.h"
-#include "selection_sort.h"
 #include "array_factory.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,6 +36,7 @@ int get_int_input(const char* text) {
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
     int * current_array = (int) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    //int array_len;
 
     int arguments[4];
     if(argc < 1 || argc > 5) {
@@ -84,37 +89,34 @@ int main(int argc, char **argv) {
         /* Sort using 'Heap Sort' */
         case 5:
             start_t = (double) clock();
-            int * sorted_array = heap_sort(current_array, array_len);
+            heap_sort(current_array, array_len);
             end_t = (double) clock();
-
+            total_t = difftime(start_t, end_t);
+            printf("Heap sort took %d miliseconds to sort %d elements.\n", total_t, array_len);
             break;
 
-        /* Sort using 'Heap Sort' */
+        /* Sort using 'Selection Sort' */
         case 6:
             /* code */
             break;
 
-        /* Sort using 'Heap Sort' */
+        /* Sort using 'Merge Sort' */
         case 7:
             /* code */
             break;
 
-        /* Sort using 'Heap Sort' */
+        /* Sort using 'qsort()' */
         case 8:
             /* code */
             break;
 
-        /* Sort using 'Heap Sort' */
-        case 9:
-            /* code */
-            break;
-
         /* Exit program. */
-        case 10:
+        case 9:
             printf("Exiting program!\n");
             exit(0);
         
         default:
+            fprintf(stderr, "Invalid choice.\nYour choices are 1 to 9.\n");
             break;
         }
     }
