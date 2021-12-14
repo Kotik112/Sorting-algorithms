@@ -39,9 +39,9 @@ int cmpfunc( const void *a, const void *b) {
 }
 
 /* Utility function to print an array of size "length" */
-void print_array(int* array, int length) {
+void print_array(int * array, int length) {
     for (int i = 0; i < length; i++) {
-        printf("Elem %d is %d \n", i, array[i]);;
+        printf("Elem %d is %d \n", i, array[i]);
     }
 }
 
