@@ -4,6 +4,13 @@
 #include "heapsort.h"
 #include "array_factory.h"
 
+static int cmp( const void *a, const void *b) {
+    return *(int*)a - *(int*)b;
+}
+
+static int reverse_cmp( const void *a, const void *b) {
+    return *(int*)b - *(int*)a;
+}
 
 int * create_random_array(int array_len) {
     int * array = (int*) malloc(sizeof(int) * array_len);
@@ -14,13 +21,13 @@ int * create_random_array(int array_len) {
 
 int * create_sorted_array(int array_len) {
     int * array = create_random_array(array_len);
-    heap_sort(array, array_len);
+    qsort(array, array_len, sizeof(int), cmp);
     return array;
 }
 
 int * create_reverse_sorted_array(int array_len) {
     int * array = create_random_array(array_len);
-    //bubble sort in reverse here?
+    qsort(array, array_len, sizeof(int), reverse_cmp);
     return array;
 }
 

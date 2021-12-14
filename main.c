@@ -48,8 +48,8 @@ void print_array(int * array, int length) {
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
     int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    /* Place holder for length of current working array. */
     int array_len;
-
     /* Variables for storing the time delta for the storting algorithms. */
     clock_t start_t, end_t, total_t;
 
@@ -66,6 +66,7 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
             }
             current_array = create_random_array(array_len);
+            //print_array(current_array, array_len);
             break;
 
         /* Create sorted array. */
@@ -75,11 +76,18 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
             }
             current_array = create_sorted_array(array_len);
+            //print_array(current_array, array_len);
             break;
 
         /* Create reversed array. */
         case 3:
             /* "Create reversed array" code here */
+            array_len = get_int_input("Input the length of the array: ");
+            if (array_len > MAX_ARRAY_SIZE) {
+                fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
+            }
+            current_array = create_reverse_sorted_array(array_len);
+            //print_array(current_array, array_len);
             break;
 
         /* Create "almost" sorted array. */
@@ -93,6 +101,7 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "Error! Elements to ignore cannot exceed the array length.\n");
             }
             current_array = create_almost_sorted_array(array_len, elements_to_ignore);
+            //print_array(current_array, array_len);
             break;
 
         /* Sort using 'Heap Sort' */
@@ -101,7 +110,7 @@ int main(int argc, char **argv) {
             heap_sort(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Total time: %f seconds.\n",(double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
             //print_array(current_array, array_len);
             break;
 
@@ -121,12 +130,13 @@ int main(int argc, char **argv) {
             qsort(current_array, array_len, sizeof(int), cmpfunc);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Total time: %f seconds.\n",(double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'qsort()': %f seconds.\n", array_len, (double) total_t / 1000);
             break;
 
         /* Exit program. */
         case 9:
             printf("Exiting program!\n");
+            free(current_array);
             exit(0);
         
         default:
@@ -134,31 +144,5 @@ int main(int argc, char **argv) {
             break;
         }
     }
-/*    clock_t start_t, end_t, total_t;
-    
-    int size_n = 0;
-
-    printf("Enter array size: ");
-    scanf("%d", &size_n);
-
-    int * array = create_random_array(size_n);
-    //print_array(array, size_n);
-
-     printf("Press any key to start the timer and sorting.\n");
-    int temp;
-    scanf("%d", &temp);
-
-    // Timer start
-    start_t = (double) clock();
-
-    //Sort using heap sort
-    heap_sort(array, size_n);
-
-    // Timer end
-    end_t = (double) clock();
-    printf("SORTED!\n");
-    free(array);
-    total_t = difftime(end_t, start_t);
-    printf("Total time: %f.\n",(double) total_t / 1000); */
     return 0;
 }
