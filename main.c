@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
     int * current_array = (int) malloc(sizeof(int) * MAX_ARRAY_SIZE);
     //int array_len;
 
-    int arguments[4];
+/*     int arguments[4];
     if(argc < 1 || argc > 5) {
         fprintf(stderr, "Error! You must specify 1-5 arguments for the length of the arrays.\n");
         return -1;
@@ -47,12 +47,13 @@ int main(int argc, char **argv) {
         for(int i = 1; i < argc; i++) {
             arguments[i-1] = atoi(argv[i]);
         }
-        /* For testing purposes. */
+        // For testing purposes. 
         for(int i = 0; i < sizeof(arguments); i++) {
             printf("%d ", arguments[i]);
             printf("\n");
         }
-    }
+    } */
+    
     /* Variables for storing the time delta for the storting algorithms. */
     clock_t start_t, end_t, total_t;
     while(1) {
