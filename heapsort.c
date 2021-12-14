@@ -1,6 +1,6 @@
 // Heapsort with complexity of O(n log n)
 
-#include <stdio.h>
+//#include <stdio.h>
 
 #define RUN_TESTS 0
 
@@ -68,14 +68,6 @@ void heap_sort(int* array, int length) {
     }
     
 }
-
-/* Utility function to print an array of size "length" */
-void print_array(int* array, int length) {
-    for (int i = 0; i < length; i++) {
-        printf("Elem %d is %d \n", i, array[i]);;
-    }
-}
-    
 
 /* int main(int argc, char *argv) {
     

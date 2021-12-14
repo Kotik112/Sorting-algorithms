@@ -33,29 +33,26 @@ int get_int_input(const char* text) {
     return atoi(input);
 }
 
+/* Comparison function for qsort(). */
+int cmpfunc( const void *a, const void *b) {
+    return *(int*)a - *(int*)b;
+}
+
+/* Utility function to print an array of size "length" */
+void print_array(int* array, int length) {
+    for (int i = 0; i < length; i++) {
+        printf("Elem %d is %d \n", i, array[i]);;
+    }
+}
+
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
-    int * current_array = (int) malloc(sizeof(int) * MAX_ARRAY_SIZE);
-    //int array_len;
+    int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    int array_len;
 
-/*     int arguments[4];
-    if(argc < 1 || argc > 5) {
-        fprintf(stderr, "Error! You must specify 1-5 arguments for the length of the arrays.\n");
-        return -1;
-    }
-    else{
-        for(int i = 1; i < argc; i++) {
-            arguments[i-1] = atoi(argv[i]);
-        }
-        // For testing purposes. 
-        for(int i = 0; i < sizeof(arguments); i++) {
-            printf("%d ", arguments[i]);
-            printf("\n");
-        }
-    } */
-    
     /* Variables for storing the time delta for the storting algorithms. */
     clock_t start_t, end_t, total_t;
+
     while(1) {
         print_menu();
         int user_input = get_int_input("Enter you choice (1-10): ");
@@ -64,27 +61,38 @@ int main(int argc, char **argv) {
         {
         /* Create random array. */
         case 1:
-            int array_len = get_int_input("Input the length of the array: ");
-            if (array_len < MAX_ARRAY_SIZE) {
+            array_len = get_int_input("Input the length of the array: ");
+            if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
             }
-            int * random_array = create_random_array(array_len);
-            current_array = random_array;
+            current_array = create_random_array(array_len);
             break;
 
         /* Create sorted array. */
         case 2:
-            /* code */
+            array_len = get_int_input("Input the length of the array: ");
+            if (array_len > MAX_ARRAY_SIZE) {
+                fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
+            }
+            current_array = create_sorted_array(array_len);
             break;
 
         /* Create reversed array. */
         case 3:
-            /* code */
+            /* "Create reversed array" code here */
             break;
 
         /* Create "almost" sorted array. */
         case 4:
-            /* code */
+            array_len = get_int_input("Enter the length of the array: ");
+            if (array_len > MAX_ARRAY_SIZE) {
+                fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
+            }
+            int elements_to_ignore = get_int_input("Enter the number of elements to not sort from the end of the array: ");
+            if (elements_to_ignore >= array_len) {
+                fprintf(stderr, "Error! Elements to ignore cannot exceed the array length.\n");
+            }
+            current_array = create_almost_sorted_array(array_len, elements_to_ignore);
             break;
 
         /* Sort using 'Heap Sort' */
@@ -92,11 +100,12 @@ int main(int argc, char **argv) {
             start_t = (double) clock();
             heap_sort(current_array, array_len);
             end_t = (double) clock();
-            total_t = difftime(start_t, end_t);
-            printf("Heap sort took %d miliseconds to sort %d elements.\n", total_t, array_len);
+            total_t = difftime(end_t, start_t);
+            printf("Total time: %f seconds.\n",(double) total_t / 1000);
+            //print_array(current_array, array_len);
             break;
 
-        /* Sort using 'Selection Sort' */
+        /* Sort using 'Selection Sort' - Unn*/
         case 6:
             /* code */
             break;
@@ -108,7 +117,11 @@ int main(int argc, char **argv) {
 
         /* Sort using 'qsort()' */
         case 8:
-            /* code */
+            start_t = (double) clock();
+            qsort(current_array, array_len, sizeof(int), cmpfunc);
+            end_t = (double) clock();
+            total_t = difftime(end_t, start_t);
+            printf("Total time: %f seconds.\n",(double) total_t / 1000);
             break;
 
         /* Exit program. */
