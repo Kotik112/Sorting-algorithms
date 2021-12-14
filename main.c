@@ -1,4 +1,5 @@
 #include "heapsort.h"
+#include "selection_sort.h"
 #include "array_factory.h"
 #include <stdio.h>
 #include <stdlib.h>
