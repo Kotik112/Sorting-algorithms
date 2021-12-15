@@ -128,13 +128,20 @@ int main(int argc, char **argv) {
             //print_array(current_array, array_len);
             break;
 
-        /* Sort using 'Merge Sort' */
+        /* Sort using 'selection sort Sort' */
         case 7:
             /* code */
             break;
 
         /* Sort using 'qsort()' */
+        /* Sort using 'Merge Sort' */
         case 8:
+            /* code */
+            break;
+
+        /* Sort using 'qsort()' */
+
+        case 9:
             start_t = (double) clock();
             qsort(current_array, array_len, sizeof(int), cmpfunc);
             end_t = (double) clock();
@@ -143,7 +150,7 @@ int main(int argc, char **argv) {
             break;
 
         /* Exit program. */
-        case 9:
+        case 10:
             printf("Exiting program!\n");
             free(current_array);
             exit(0);
