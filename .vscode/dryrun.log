@@ -1,0 +1,4 @@
+make: Entering directory '/c/Users/jakob/OneDrive/Skrivbord/grupp/Grupp-inlamning---algoritm'
+gcc -Wall  main.c heapsort.c array_factory.c -o sort_calculator.exe
+make: Leaving directory '/c/Users/jakob/OneDrive/Skrivbord/grupp/Grupp-inlamning---algoritm'
+ 
