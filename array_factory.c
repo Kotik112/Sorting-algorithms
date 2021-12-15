@@ -22,7 +22,7 @@ int * create_random_array(int array_len) {
 static char *create_random_array_char(int size_n) {
     char *array = malloc(sizeof(char) * size_n);
     for(int i = 0; i < size_n; i++)
-        array[i] = 'A' + rand() % 97;
+        array[i] = 'A' + rand() % 26;
     return array;
 }
 

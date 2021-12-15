@@ -24,7 +24,7 @@ void selection_sort_char(char arr[], int n) {
                 idx = j;
             }
         }
-        swap_char(&arr[idx],&arr[i]);
+        selection_sort_swap_char(&arr[idx],&arr[i]);
     } 
 }
 
@@ -38,7 +38,7 @@ void selection_sort_int(int arr[], int n) {
                 idx = j;
             }
         }
-        swap(&arr[idx], &arr[i]);
+        selection_sort_swap_int(&arr[idx], &arr[i]);
     }
 }
 

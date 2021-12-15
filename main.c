@@ -130,10 +130,14 @@ int main(int argc, char **argv) {
 
         /* Sort using 'selection sort Sort' */
         case 7:
-            /* code */
+            start_t = (double) clock();
+            selection_sort_char(current_array, array_len);
+            end_t = (double) clock();
+            total_t = difftime(end_t, start_t);
+            printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            //print_array(current_array, array_len);
             break;
-
-        /* Sort using 'qsort()' */
+            
         /* Sort using 'Merge Sort' */
         case 8:
             /* code */
