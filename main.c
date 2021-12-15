@@ -1,6 +1,7 @@
 /* 
 TODO:
-Lösa reversed array i array factory.
+Kanske? Fixa arguments för programmet så att man kan göra flera beräkningar i rad.
+Om man inte matar in några argument så kan man då hoppa in till switch.
  */
 
 #include "heapsort.h"
@@ -9,7 +10,7 @@ Lösa reversed array i array factory.
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_ARRAY_SIZE 1000000000
+#define MAX_ARRAY_SIZE 1000000000 // one billion.
 
 void print_menu(void) {
     printf("*****\t MAIN MENU \t*****\n\n");
