@@ -12,6 +12,8 @@ Om man inte matar in några argument så kan man då hoppa in till switch.
 
 #define MAX_ARRAY_SIZE 1000000000 // one billion.
 
+typedef enum{RAND, SORT, REV, ALMOST}array_type;
+
 void print_menu(void) {
     printf("*****\t MAIN MENU \t*****\n\n");
     printf("\t1. Create random array.\n");
@@ -82,7 +84,6 @@ int main(int argc, char **argv) {
 
         /* Create reversed array. */
         case 3:
-            /* "Create reversed array" code here */
             array_len = get_int_input("Input the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
@@ -131,7 +132,7 @@ int main(int argc, char **argv) {
             qsort(current_array, array_len, sizeof(int), cmpfunc);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'qsort()': %f seconds.\n", array_len, (double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'qsort()': %lf seconds.\n", array_len, (double) total_t / 1000);
             break;
 
         /* Exit program. */
