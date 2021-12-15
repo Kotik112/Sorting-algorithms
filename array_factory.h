@@ -4,6 +4,9 @@
 /* Create an array of length size_n with random 1-99 numbers. */
 int * create_random_array(int size_n);
 
+/* Create an array of length size_n with random ASCII characters from the alphabet */
+static char *create_random_array_char(int size_n);
+
 /* Creates an array of length size_n with random numbers,
             then sorts the array before returning it. */
 int * create_sorted_array(int size_n);

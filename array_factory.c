@@ -19,6 +19,13 @@ int * create_random_array(int array_len) {
     return array;
 }
 
+static char *create_random_array_char(int size_n) {
+    char *array = malloc(sizeof(char) * size_n);
+    for(int i = 0; i < size_n; i++)
+        array[i] = 'A' + rand() % 97;
+    return array;
+}
+
 int * create_sorted_array(int array_len) {
     int * array = create_random_array(array_len);
     qsort(array, array_len, sizeof(int), cmp);
