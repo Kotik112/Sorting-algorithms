@@ -68,6 +68,7 @@ int main(int argc, char **argv) {
             array_len = get_int_input("Input the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
+                return -1;
             }
             current_array = create_random_array_int(array_len);
             //print_array(current_array, array_len);
@@ -78,6 +79,7 @@ int main(int argc, char **argv) {
             array_len = get_int_input("Input the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
+                return -1;
             }
             current_array = create_sorted_array_int(array_len);
             //print_array(current_array, array_len);
@@ -88,6 +90,7 @@ int main(int argc, char **argv) {
             array_len = get_int_input("Input the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
+                return -1;
             }
             current_array = create_reverse_sorted_array_int(array_len);
             //print_array(current_array, array_len);
@@ -98,10 +101,12 @@ int main(int argc, char **argv) {
             array_len = get_int_input("Enter the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
+                return -1;
             }
             int elements_to_ignore = get_int_input("Enter the number of elements to not sort from the end of the array: ");
             if (elements_to_ignore >= array_len) {
                 fprintf(stderr, "Error! Elements to ignore cannot exceed the array length.\n");
+                return -1;
             }
             current_array = create_almost_sorted_array_int(array_len, elements_to_ignore);
             //print_array(current_array, array_len);
@@ -123,17 +128,16 @@ int main(int argc, char **argv) {
             selection_sort_int(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'Selection sort': %f seconds.\n", array_len, (double) total_t / 1000);
             //print_array(current_array, array_len);
             break;
 
         /* Sort using 'Merge Sort' */
         case 7:
-            /* code */
+            /* Merge sort code goes here */
             break;
 
         /* Sort using 'qsort()' */
-
         case 8:
             start_t = (double) clock();
             qsort(current_array, array_len, sizeof(int), cmpfunc);
