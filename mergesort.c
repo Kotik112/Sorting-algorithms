@@ -1,7 +1,6 @@
 
-#include <stdio.h>
-#include <stdlib.h>
-  
+#include "mergesort.h"
+
 static void merge(int *array, int left, int mid, int right) {
   int i, j, cur;
   int n1 = mid - left + 1;
@@ -34,7 +33,6 @@ static void merge(int *array, int left, int mid, int right) {
   }
 }
 void merge_sort(int *array, int left, int right) {
-  printf("inne i merge\n");
   if (left < right) {
     int mid = left + (right - left) / 2;
     merge_sort(array, left, mid);

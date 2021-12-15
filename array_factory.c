@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include "heapsort.h"
+#include "mergesort.h"
 #include "array_factory.h"
 
 static int cmp( const void *a, const void *b) {

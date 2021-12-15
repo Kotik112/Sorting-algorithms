@@ -2,7 +2,7 @@
 TODO:
 Lösa reversed array i array factory.
  */
-
+#include "mergesort.h"
 #include "heapsort.h"
 #include "array_factory.h"
 #include <stdio.h>
@@ -46,6 +46,7 @@ void print_array(int * array, int length) {
 }
 
 int main(int argc, char **argv) {
+    printf("sfsafsdfsaf\n\n");
     /* Place holder for current working array. */
     int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
     /* Place holder for length of current working array. */
@@ -111,7 +112,7 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
-            //print_array(current_array, array_len);
+            print_array(current_array, array_len);
             break;
 
         /* Sort using 'Selection Sort' - Unn*/
@@ -121,7 +122,11 @@ int main(int argc, char **argv) {
 
         /* Sort using 'Merge Sort' */
         case 7:
-            /* code */
+            start_t = (double) clock();
+            merge_sort(current_array, 0, array_len);
+            end_t = (double) clock();
+            total_t = difftime(end_t, start_t);
+            printf("Time taken to sort %d elements using 'Merge Sort': %f seconds.\n", array_len, (double) total_t / 1000);
             break;
 
         /* Sort using 'qsort()' */
