@@ -1,51 +1,44 @@
-// Merge sort in C
-#include "merge_sort.h"
 
-/*merge skelleton and quite broken atm */
+#include <stdio.h>
+#include <stdlib.h>
+  
+static void merge(int *array, int left, int mid, int right) {
+  int i, j, cur;
+  int n1 = mid - left + 1;
+  int n2 = right - mid;
 
-static void merge(int *arr, int start, int mid, int end) {
+  int left_tmp[n1], right_tmp[n2];
 
-  int n1 = mid - start + 1;
-  int n2 = start - end;
-  int L[n1], M[n2];
+  for (i = 0; i < n1; i++)
+    left_tmp[i] = array[left + i];
+  for (j = 0; j < n2; j++)
+    right_tmp[j] = array[mid + 1 + j];
 
-  for (int i = 0; i < n1; i++)
-    L[i] = arr[start + i];
-  for (int j = 0; j < n2; j++)
-    M[j] = arr[mid + 1 + j];
-
-  int i = 0, j = 0, cur = start;
-
+  i = 0, j = 0, cur = left;
   while (i < n1 && j < n2) {
-    if (L[i] <= M[j]) {
-      arr[cur] = L[i];
+    if (left_tmp[i] <= right_tmp[j]) {
+      array[cur] = left_tmp[i];
       i++;
     } else {
-      arr[cur] = M[j];
+      array[cur] = right_tmp[j];
       j++;
-    }
-    cur++;
+    } cur++;
   }
   while (i < n1) {
-    arr[cur] = L[i];
+    array[cur] = left_tmp[i];
     i++, cur++;
   }
-
   while (j < n2) {
-    arr[cur] = M[j];
+    array[cur] = right_tmp[j];
     j++, cur++;
   }
 }
-
-static void sort(int *array, int left, int right) {
+void merge_sort(int *array, int left, int right) {
+  printf("inne i merge\n");
   if (left < right) {
     int mid = left + (right - left) / 2;
-    sort(array, left, mid);
-    sort(array, mid + 1, right);
+    merge_sort(array, left, mid);
+    merge_sort(array, mid + 1, right);
     merge(array, left, mid, right);
   }
-}
-
-int merge_sort(int *array, int start, int size_n) {
-  merge_sort(array, start, size_n - 1);
 }

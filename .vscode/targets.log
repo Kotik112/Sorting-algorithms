@@ -7,10 +7,12 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Wed Dec 15 07:58:51 2021
+# Make data base, printed on Wed Dec 15 11:07:19 2021
 
 # Variables
+ 
 
 # environment
 SYSTEMDRIVE = C:
@@ -21,7 +23,7 @@ USERPROFILE = C:\Users\jakob
 # environment
 LOCALAPPDATA = C:\Users\jakob\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-e6cb9b21-2f46-49ad-adb8-a0931cdd19eb-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-2620fffd-74b3-48f3-b8af-fa93a39dfd3f-sock
 # environment
 VSCODE_CWD = C:\Users\jakob\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -35,7 +37,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16264_QULFYPQDLDRYGIZJ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_476_VGECMDTLYOAYZSRI
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -91,7 +93,7 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 16264
+VSCODE_PID = 476
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -212,10 +214,11 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 # No pattern-specific variable values.
 
 # Directories
+ 
 
-# . (device 2430488182, inode 2533274790766888): 16 files, no impossibilities.
+# . (device 2430488182, inode 2533274790766888): 18 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -258,12 +261,12 @@ makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 208 B / avg = 9 B
-# current buf: size = 8162 B / used = 208 B / count = 21 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 234 B / avg = 10 B
+# current buf: size = 8162 B / used = 234 B / count = 23 / avg = 10 B
 
-# strcache performance: lookups = 26 / hit rate = 19%
+# strcache performance: lookups = 28 / hit rate = 17%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/26=0%
-# Finished Make data base on Wed Dec 15 07:58:51 2021
+# Load=23/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Wed Dec 15 11:07:19 2021
 
  
