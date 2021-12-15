@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
             }
-            current_array = create_random_array(array_len);
+            current_array = create_random_array_int(array_len);
             //print_array(current_array, array_len);
             break;
 
@@ -80,7 +80,7 @@ int main(int argc, char **argv) {
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
             }
-            current_array = create_sorted_array(array_len);
+            current_array = create_sorted_array_int(array_len);
             //print_array(current_array, array_len);
             break;
 
@@ -90,7 +90,7 @@ int main(int argc, char **argv) {
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
             }
-            current_array = create_reverse_sorted_array(array_len);
+            current_array = create_reverse_sorted_array_int(array_len);
             //print_array(current_array, array_len);
             break;
 
@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
             if (elements_to_ignore >= array_len) {
                 fprintf(stderr, "Error! Elements to ignore cannot exceed the array length.\n");
             }
-            current_array = create_almost_sorted_array(array_len, elements_to_ignore);
+            current_array = create_almost_sorted_array_int(array_len, elements_to_ignore);
             //print_array(current_array, array_len);
             break;
 
@@ -137,7 +137,7 @@ int main(int argc, char **argv) {
             printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
             //print_array(current_array, array_len);
             break;
-            
+
         /* Sort using 'Merge Sort' */
         case 8:
             /* code */
