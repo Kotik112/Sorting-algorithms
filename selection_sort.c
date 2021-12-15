@@ -12,8 +12,7 @@ void swap_char(char *x_ptr,char *y_ptr) {
     char tmp = *x_ptr;
     *x_ptr = *y_ptr;
     *y_ptr = tmp;
-}
-
+} 
 
 static int *create_array(int size_n) {
   int *array = malloc(sizeof(int) * size_n);
@@ -21,7 +20,6 @@ static int *create_array(int size_n) {
      array[i]=rand() % 1000;
   return array;
 }
-
 
 static char *create_array_char(int size_n) {
     char *array = malloc(sizeof(char) * size_n);
@@ -47,7 +45,6 @@ void sort_char(char arr[], int n) {
     }
     
 }
-
 
 void sort(int arr[], int n) {
     int i, j, idx;
