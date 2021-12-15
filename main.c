@@ -5,6 +5,7 @@ Om man inte matar in några argument så kan man då hoppa in till switch.
  */
 
 #include "heapsort.h"
+#include "selection_sort.h"
 #include "array_factory.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,10 +22,11 @@ void print_menu(void) {
     printf("\t3. Create reversed array.\n");
     printf("\t4. Create almost sorted array.\n");
     printf("\t5. Sort using 'Heap Sort'. - Arman\n");
-    printf("\t6. Sort using 'Selection Sort'. - Unn\n");
-    printf("\t7. Sort using 'Merge Sort'. - Jakob\n"); 
-    printf("\t8. Sort using 'qsort()'.\n");
-    printf("\t9. Exit program.\n");
+    printf("\t6. Sort using 'Selection Sort integers'. - Unn\n");
+    printf("\t7. Sort using 'Selection Sort Char'. - Unn\n");
+    printf("\t8. Sort using 'Merge Sort'. - Jakob\n"); 
+    printf("\t9. Sort using 'qsort()'.\n");
+    printf("\t10. Exit program.\n");
     printf("\n");
 }
 
@@ -118,7 +120,12 @@ int main(int argc, char **argv) {
 
         /* Sort using 'Selection Sort' - Unn*/
         case 6:
-            /* code */
+            start_t = (double) clock();
+            selection_sort_int(current_array, array_len);
+            end_t = (double) clock();
+            total_t = difftime(end_t, start_t);
+            printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            //print_array(current_array, array_len);
             break;
 
         /* Sort using 'Merge Sort' */
