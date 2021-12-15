@@ -47,5 +47,5 @@ static void sort(int *array, int left, int right) {
 }
 
 int merge_sort(int *array, int start, int size_n) {
-  merge_sort(array, 0, size_n - 1);
+  merge_sort(array, start, size_n - 1);
 }
