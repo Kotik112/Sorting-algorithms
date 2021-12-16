@@ -16,10 +16,7 @@ static int reverse_cmp( const void *a, const void *b) {
 
 
 int * create_random_array_int(int array_len) {
-    int * array = (int*) malloc(sizeof(int) * array_len);
-    if (array == NULL) {
-        fprintf(stderr, "Malloc() failed to allocate memory!.");
-    }
+    int * array;
     for(int i = 0; i < array_len; i++)
        array[i]=rand() % 100;
     return array;
