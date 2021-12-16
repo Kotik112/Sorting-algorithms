@@ -10,7 +10,6 @@ int * create_sorted_array_int(int size_n);
 
 /* Creates an array of length size_n with random numbers,
             then sorts the array in reverse order. */
-/* NOT COMPLETE! */
 int * create_reverse_sorted_array_int(int array_len);
 
 /* Creates an array of length size_n with random numbers,
