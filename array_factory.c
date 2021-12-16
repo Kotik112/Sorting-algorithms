@@ -4,12 +4,13 @@
 #include "heapsort.h"
 #include "array_factory.h"
 
-static int cmp_int( const void *a, const void *b) {
+/* Comparison function for qsort() */
+static int cmp( const void *a, const void *b) {
     return *(int*)a - *(int*)b;
 }
 
-
-static int reverse_cmp_int( const void *a, const void *b) {
+/* Reverse comparison function for qsort() */
+static int reverse_cmp( const void *a, const void *b) {
     return *(int*)b - *(int*)a;
 }
 
@@ -23,20 +24,20 @@ int * create_random_array_int(int array_len) {
 
 int * create_sorted_array_int(int array_len) {
     int * array = create_random_array_int(array_len);
-    qsort(array, array_len, sizeof(int), cmp_int);
+    qsort(array, array_len, sizeof(int), cmp);
     return array;
 }
 
 int * create_reverse_sorted_array_int(int array_len) {
     int * array = create_random_array_int(array_len);
-    qsort(array, array_len, sizeof(int), reverse_cmp_int);
+    qsort(array, array_len, sizeof(int), cmp);
     return array;
 }
 
 int * create_almost_sorted_array_int(int array_len, int elements_to_ignore) {
     int * array = create_random_array_int(array_len);
     int length = array_len - elements_to_ignore;
-    heap_sort(array, length);
+    qsort(array, length, sizeof(int), cmp);
     return array;
 }
 

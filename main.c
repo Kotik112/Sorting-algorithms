@@ -1,7 +1,7 @@
 /* 
 TODO:
-Kanske? Fixa arguments för programmet så att man kan göra flera beräkningar i rad.
-Om man inte matar in några argument så kan man då hoppa in till switch.
+- Fix memory leak.
+- Fix almost sorted array.
  */
 
 #include "heapsort.h"
