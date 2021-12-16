@@ -7,9 +7,8 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu Dec 16 05:59:40 2021
+# Make data base, printed on Thu Dec 16 16:29:29 2021
 
 # Variables
 
@@ -24,7 +23,7 @@ LOCAL_GIT_DIRECTORY = C:\Users\jakob\AppData\Local\GitHubDesktop\app-2.9.6\resou
 # environment
 LOCALAPPDATA = C:\Users\jakob\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-2c03dd87-a506-4def-8253-af2e2167b2ff-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-c17f45f0-7ac0-40c7-8d56-9ceeecfd0328-sock
 # environment
 VSCODE_CWD = C:\Users\jakob\AppData\Local\GitHubDesktop\app-2.9.6
 # environment
@@ -38,7 +37,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2348_GJZPITLAPNBZCJLY
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_12076_CDTKPTOORVGISVYM
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -94,7 +93,7 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2348
+VSCODE_PID = 12076
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -220,9 +219,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 
 # Directories
 
-# . (device 2430488182, inode 22517998136862088): 15 files, no impossibilities.
+# . (device 2430488182, inode 16044073672516036): 17 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -253,7 +252,7 @@ all:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-16 05:59:05.1435723
+#  Last modified 2021-12-16 16:29:16.3271676
 #  File has been updated.
 #  Successfully updated.
 
@@ -265,12 +264,12 @@ makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 20 / storage = 199 B / avg = 9 B
-# current buf: size = 8162 B / used = 199 B / count = 20 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 223 B / avg = 10 B
+# current buf: size = 8162 B / used = 223 B / count = 22 / avg = 10 B
 
-# strcache performance: lookups = 25 / hit rate = 20%
+# strcache performance: lookups = 27 / hit rate = 18%
 # hash-table stats:
-# Load=20/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Thu Dec 16 05:59:40 2021
+# Load=22/8192=0%, Rehash=0, Collisions=0/27=0%
+# Finished Make data base on Thu Dec 16 16:29:29 2021
 
  

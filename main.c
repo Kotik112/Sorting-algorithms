@@ -136,7 +136,7 @@ int main(int argc, char **argv) {
         /* Sort using 'Merge Sort' */
         case 7:
             start_t = (double) clock();
-            merge_sort(current_array, current_array[0], array_len);
+            merge_sort(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
