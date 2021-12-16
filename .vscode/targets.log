@@ -7,9 +7,8 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu Dec 16 05:59:40 2021
+# Make data base, printed on Thu Dec 16 09:02:51 2021
 
 # Variables
 
@@ -20,13 +19,11 @@ LC_ALL = C
 # environment
 USERPROFILE = C:\Users\jakob
 # environment
-LOCAL_GIT_DIRECTORY = C:\Users\jakob\AppData\Local\GitHubDesktop\app-2.9.6\resources\app\git
-# environment
 LOCALAPPDATA = C:\Users\jakob\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-2c03dd87-a506-4def-8253-af2e2167b2ff-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-99be4b1a-1e75-4eb2-92e8-a6e8196f3941-sock
 # environment
-VSCODE_CWD = C:\Users\jakob\AppData\Local\GitHubDesktop\app-2.9.6
+VSCODE_CWD = C:\Users\jakob\AppData\Local\Programs\Microsoft VS Code
 # environment
 SYSTEMROOT = C:\WINDOWS
 # environment
@@ -38,7 +35,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2348_GJZPITLAPNBZCJLY
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15012_ARNHTNEIKNBXTWUW
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -94,7 +91,7 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2348
+VSCODE_PID = 15012
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -201,10 +198,6 @@ SUFFIXES :=
 ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
-# environment
-VSCODE_CLI = 1
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
@@ -212,7 +205,7 @@ PROCESSOR_REVISION = a502
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 # variable set hash-table stats:
-# Load=99/1024=10%, Rehash=0, Collisions=12/126=10%
+# Load=96/1024=9%, Rehash=0, Collisions=12/123=10%
 
 # Pattern-specific Variable Values
 
@@ -220,9 +213,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 
 # Directories
 
-# . (device 2430488182, inode 22517998136862088): 15 files, no impossibilities.
+# . (device 2430488182, inode 22517998136862088): 17 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -265,12 +258,12 @@ makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 20 / storage = 199 B / avg = 9 B
-# current buf: size = 8162 B / used = 199 B / count = 20 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 223 B / avg = 10 B
+# current buf: size = 8162 B / used = 223 B / count = 22 / avg = 10 B
 
-# strcache performance: lookups = 25 / hit rate = 20%
+# strcache performance: lookups = 27 / hit rate = 18%
 # hash-table stats:
-# Load=20/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Thu Dec 16 05:59:40 2021
+# Load=22/8192=0%, Rehash=0, Collisions=0/27=0%
+# Finished Make data base on Thu Dec 16 09:02:51 2021
 
  
