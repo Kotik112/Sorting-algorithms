@@ -29,7 +29,7 @@ void create_sorted_array_int(int * array, int array_len) {
 
 void create_reverse_sorted_array_int(int * array, int array_len) {
     create_random_array_int(array, array_len);
-    qsort(array, array_len, sizeof(int), cmp);
+    qsort(array, array_len, sizeof(int), reverse_cmp);
     return array;
 }
 

@@ -74,8 +74,6 @@ int main(int argc, char **argv) {
                 return -1;
             }
             create_random_array_int(current_array, array_len);
-            free(current_array);
-            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -87,8 +85,6 @@ int main(int argc, char **argv) {
                 return -1;
             }
             create_sorted_array_int(current_array, array_len);
-            free(current_array);
-            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -100,8 +96,6 @@ int main(int argc, char **argv) {
                 return -1;
             }
             create_reverse_sorted_array_int(current_array, array_len);
-            free(current_array);
-            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -118,8 +112,6 @@ int main(int argc, char **argv) {
                 return -1;
             }
             create_almost_sorted_array_int(current_array, array_len, elements_to_ignore);
-            free(current_array);
-            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -150,6 +142,8 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Merge Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            current_array = NULL;
             break;
 
         /* Sort using 'qsort()' */
@@ -159,6 +153,8 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'qsort()': %lf seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            current_array = NULL;
             break;
 
         /* Exit program. */
