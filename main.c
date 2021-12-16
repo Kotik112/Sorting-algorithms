@@ -50,7 +50,7 @@ void print_array(int * array, int length) {
 
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
-    int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    unsigned int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
     if(current_array == NULL) {
         fprintf(stderr, "Malloc failed to allocate memory.\n");
         return -1;      
