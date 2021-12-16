@@ -7,11 +7,13 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu Dec 16 16:29:29 2021
+# Make data base, printed on Thu Dec 16 18:19:12 2021
 
 # Variables
 
+ 
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -86,6 +88,7 @@ MFLAGS = -pqrR
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+ 
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST := makefile
 # automatic
@@ -211,6 +214,7 @@ PROCESSOR_REVISION = a502
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 # variable set hash-table stats:
+ 
 # Load=99/1024=10%, Rehash=0, Collisions=12/126=10%
 
 # Pattern-specific Variable Values
@@ -219,9 +223,10 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 
 # Directories
 
-# . (device 2430488182, inode 16044073672516036): 17 files, no impossibilities.
+ 
+# . (device 2430488182, inode 16044073672516036): 18 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -234,7 +239,7 @@ prog:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 2):
-	gcc -Wall  main.c heapsort.c selection_sort.c array_factory.c -o sort_calculator.exe
+	gcc -Wall  main.c heapsort.c mergesort.c selection_sort.c array_factory.c -o sort_calculator.exe
 
 # Not a target:
 .DEFAULT:
@@ -252,7 +257,7 @@ all:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-16 16:29:16.3271676
+#  Last modified 2021-12-16 18:19:12.2845358
 #  File has been updated.
 #  Successfully updated.
 
@@ -264,12 +269,12 @@ makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 223 B / avg = 10 B
-# current buf: size = 8162 B / used = 223 B / count = 22 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 243 B / avg = 10 B
+# current buf: size = 8162 B / used = 243 B / count = 23 / avg = 10 B
 
-# strcache performance: lookups = 27 / hit rate = 18%
+# strcache performance: lookups = 28 / hit rate = 17%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=0/27=0%
-# Finished Make data base on Thu Dec 16 16:29:29 2021
+# Load=23/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Thu Dec 16 18:19:12 2021
 
  
