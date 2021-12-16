@@ -1,7 +1,7 @@
 /* 
 TODO:
-Kanske? Fixa arguments för programmet så att man kan göra flera beräkningar i rad.
-Om man inte matar in några argument så kan man då hoppa in till switch.
+- Fix memory leak.
+- Fix almost sorted array.
  */
 
 #include "heapsort.h"
@@ -53,6 +53,10 @@ void print_array(int * array, int length) {
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
     int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    if(current_array == NULL) {
+        fprintf(stderr, "Malloc failed to allocate memory.\n");
+        return -1;      
+    }
     /* Place holder for length of current working array. */
     int array_len;
     /* Variables for storing the time delta for the storting algorithms. */
@@ -139,7 +143,7 @@ int main(int argc, char **argv) {
             merge_sort(current_array, current_array[0], array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'Merge Sort': %f seconds.\n", array_len, (double) total_t / 1000);
             break;
 
         /* Sort using 'qsort()' */
