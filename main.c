@@ -14,8 +14,6 @@ TODO:
 
 #define MAX_ARRAY_SIZE 1000000000 // one billion.
 
-typedef enum{RAND, SORT, REV, ALMOST}array_type;
-
 void print_menu(void) {
     printf("*****\t MAIN MENU \t*****\n\n");
     printf("\t1. Create random array.\n");
@@ -52,7 +50,11 @@ void print_array(int * array, int length) {
 
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
-    int * current_array = NULL;
+    int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    if(current_array == NULL) {
+        fprintf(stderr, "Malloc failed to allocate memory.\n");
+        return -1;      
+    }
     /* Place holder for length of current working array. */
     int array_len;
     /* Variables for storing the time delta for the storting algorithms. */
@@ -71,7 +73,9 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
                 return -1;
             }
-            current_array = create_random_array_int(array_len);
+            create_random_array_int(current_array, array_len);
+            free(current_array);
+            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -82,18 +86,22 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
                 return -1;
             }
-            current_array = create_sorted_array_int(array_len);
+            create_sorted_array_int(current_array, array_len);
+            free(current_array);
+            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
         /* Create reversed array. */
-        case 3:
+        case 3:     
             array_len = get_int_input("Input the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
                 return -1;
             }
-            current_array = create_reverse_sorted_array_int(array_len);
+            create_reverse_sorted_array_int(current_array, array_len);
+            free(current_array);
+            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -109,7 +117,9 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "Error! Elements to ignore cannot exceed the array length.\n");
                 return -1;
             }
-            current_array = create_almost_sorted_array_int(array_len, elements_to_ignore);
+            create_almost_sorted_array_int(current_array, array_len, elements_to_ignore);
+            free(current_array);
+            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -121,9 +131,6 @@ int main(int argc, char **argv) {
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
             //print_array(current_array, array_len);
-            free(current_array);
-            current_array = NULL;
-
             break;
 
         /* Sort using 'Selection Sort' - Unn*/
@@ -134,19 +141,15 @@ int main(int argc, char **argv) {
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Selection sort': %f seconds.\n", array_len, (double) total_t / 1000);
             //print_array(current_array, array_len);
-            free(current_array);
-            current_array = NULL;
             break;
 
         /* Sort using 'Merge Sort' */
         case 7:
             start_t = (double) clock();
-            merge_sort(current_array, array_len);
+            merge_sort(current_array, current_array[0], array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
-            free(current_array);
-            current_array = NULL;
+            printf("Time taken to sort %d elements using 'Merge Sort': %f seconds.\n", array_len, (double) total_t / 1000);
             break;
 
         /* Sort using 'qsort()' */
@@ -156,14 +159,12 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'qsort()': %lf seconds.\n", array_len, (double) total_t / 1000);
-            free(current_array);
             break;
 
         /* Exit program. */
         case 9:
             printf("Exiting program!\n");
             free(current_array);
-            current_array = NULL;
             exit(0);
         
         default:
