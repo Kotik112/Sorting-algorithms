@@ -6,7 +6,7 @@ Om man inte matar in några argument så kan man då hoppa in till switch.
 
 #include "heapsort.h"
 #include "selection_sort.h"
-#include "mergesort.h"
+#include "merge_sort.h"
 #include "array_factory.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -52,14 +52,14 @@ void print_array(int * array, int length) {
 
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
-    int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    int * current_array = NULL; //(int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
     /* Place holder for length of current working array. */
     int array_len;
     /* Variables for storing the time delta for the storting algorithms. */
-    clock_t start_t, end_t, total_t;
 
     while(1) {
         print_menu();
+        clock_t start_t, end_t, total_t;
         int user_input = get_int_input("Enter you choice (1-10): ");
 
         switch (user_input)
@@ -135,11 +135,14 @@ int main(int argc, char **argv) {
 
         /* Sort using 'Merge Sort' */
         case 7:
+            int *temp = malloc(sizeof(int) * array_len);
             start_t = (double) clock();
-            merge_sort(current_array, current_array[0], array_len);
+            merge_sort(0, array_len - 1, current_array, temp);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            free(temp);
             break;
 
         /* Sort using 'qsort()' */
@@ -154,7 +157,7 @@ int main(int argc, char **argv) {
         /* Exit program. */
         case 9:
             printf("Exiting program!\n");
-            free(current_array);
+            if (current_array) free(current_array);
             exit(0);
         
         default:
