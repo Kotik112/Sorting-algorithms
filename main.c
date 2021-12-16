@@ -12,8 +12,6 @@ TODO:
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_ARRAY_SIZE 1000000000 // one billion.
-
 void print_menu(void) {
     printf("*****\t MAIN MENU \t*****\n\n");
     printf("\t1. Create random array.\n");
@@ -122,6 +120,7 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -132,6 +131,7 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Selection sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
@@ -142,7 +142,6 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Merge Sort': %f seconds.\n", array_len, (double) total_t / 1000);
-            free(current_array);
             current_array = NULL;
             break;
 
@@ -153,7 +152,6 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'qsort()': %lf seconds.\n", array_len, (double) total_t / 1000);
-            free(current_array);
             current_array = NULL;
             break;
 
