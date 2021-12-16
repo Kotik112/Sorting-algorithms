@@ -1,0 +1,5 @@
+make.exe --dry-run --keep-going --print-directory
+make: Entering directory '/c/Users/jakob/OneDrive/Skrivbord/grupp/Grupp-inlamning---algoritm'
+gcc -Wall  main.c heapsort.c mergesort.c selection_sort.c array_factory.c -o sort_calculator.exe
+make: Leaving directory '/c/Users/jakob/OneDrive/Skrivbord/grupp/Grupp-inlamning---algoritm'
+ 

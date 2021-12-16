@@ -1,11 +1,12 @@
 /* 
 TODO:
-Kanske? Fixa arguments för programmet så att man kan göra flera beräkningar i rad.
-Om man inte matar in några argument så kan man då hoppa in till switch.
+- Fix memory leak.
+- Fix almost sorted array.
  */
 
 #include "heapsort.h"
 #include "selection_sort.h"
+#include "mergesort.h"
 #include "array_factory.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,7 +52,7 @@ void print_array(int * array, int length) {
 
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
-    int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    int * current_array = NULL;
     /* Place holder for length of current working array. */
     int array_len;
     /* Variables for storing the time delta for the storting algorithms. */
@@ -120,6 +121,9 @@ int main(int argc, char **argv) {
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
             //print_array(current_array, array_len);
+            free(current_array);
+            current_array = NULL;
+
             break;
 
         /* Sort using 'Selection Sort' - Unn*/
@@ -130,11 +134,19 @@ int main(int argc, char **argv) {
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Selection sort': %f seconds.\n", array_len, (double) total_t / 1000);
             //print_array(current_array, array_len);
+            free(current_array);
+            current_array = NULL;
             break;
 
         /* Sort using 'Merge Sort' */
         case 7:
-            /* Merge sort code goes here */
+            start_t = (double) clock();
+            merge_sort(current_array, array_len);
+            end_t = (double) clock();
+            total_t = difftime(end_t, start_t);
+            printf("Time taken to sort %d elements using 'Merge Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            current_array = NULL;
             break;
 
         /* Sort using 'qsort()' */
@@ -144,12 +156,15 @@ int main(int argc, char **argv) {
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'qsort()': %lf seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            current_array = NULL;
             break;
 
         /* Exit program. */
         case 9:
             printf("Exiting program!\n");
             free(current_array);
+            current_array = NULL;
             exit(0);
         
         default:
