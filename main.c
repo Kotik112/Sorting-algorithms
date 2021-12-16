@@ -65,7 +65,7 @@ int main(int argc, char **argv) {
         /* Create random array. */
         case 1:
             if (current_array) {
-                printf("choose algorithm.\n");
+                printf("Choose algorithm.\n");
                 break;
             }
             array_len = get_int_input("Input the length of the array: ");
@@ -80,7 +80,7 @@ int main(int argc, char **argv) {
         /* Create sorted array. */
         case 2:
             if (current_array) {
-                printf("choose algorithm.\n");
+                printf("Choose algorithm.\n");
                 break;
             }
             array_len = get_int_input("Input the length of the array: ");
@@ -95,7 +95,7 @@ int main(int argc, char **argv) {
         /* Create reversed array. */
         case 3:
             if (current_array) {
-                printf("choose algorithm.\n");
+                printf("Choose algorithm.\n");
                 break;
             }    
             array_len = get_int_input("Input the length of the array: ");
@@ -110,7 +110,7 @@ int main(int argc, char **argv) {
         /* Create "almost" sorted array. */
         case 4:
             if (current_array) {
-                printf("choose algorithm.\n");
+                printf("Choose algorithm.\n");
                 break;
             }
             array_len = get_int_input("Enter the length of the array: ");
@@ -130,7 +130,7 @@ int main(int argc, char **argv) {
         /* Sort using 'Heap Sort' */
         case 5:
             if (!current_array) {
-                printf("choose array type.\n");
+                printf("Choose array type.\n");
                 break;
             }
             start_t = (double) clock();
@@ -146,7 +146,7 @@ int main(int argc, char **argv) {
         /* Sort using 'Selection Sort' - Unn*/
         case 6:
             if (!current_array) {
-                printf("choose array type.\n");
+                printf("Choose array type.\n");
                 break;
             }
             start_t = (double) clock();
@@ -162,7 +162,7 @@ int main(int argc, char **argv) {
         /* Sort using 'Merge Sort' */
         case 7:
             if (!current_array) {
-                printf("choose array type.\n");
+                printf("Choose array type.\n");
                 break;
             }
             start_t = (double) clock();
@@ -177,7 +177,7 @@ int main(int argc, char **argv) {
         /* Sort using 'qsort()' */
         case 8:
             if (!current_array) {
-                printf("choose array type.\n");
+                printf("Choose array type.\n");
                 break;
             }
             start_t = (double) clock();
