@@ -14,9 +14,9 @@ static int reverse_cmp( const void *a, const void *b) {
     return *(int*)b - *(int*)a;
 }
 
-/* Creates an array of length 'array_len', each element will be between 1 and 99. */
+
 int * create_random_array_int(int array_len) {
-    int * array = (int*) malloc(sizeof(int) * array_len);   //Vart ska jag fria malloc?
+    int * array = (int*) malloc(sizeof(int) * array_len);
     for(int i = 0; i < array_len; i++)
        array[i]=rand() % 100;
     return array;
@@ -40,3 +40,4 @@ int * create_almost_sorted_array_int(int array_len, int elements_to_ignore) {
     qsort(array, length, sizeof(int), cmp);
     return array;
 }
+
