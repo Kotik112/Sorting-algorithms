@@ -9,10 +9,11 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Thu Dec 16 05:59:40 2021
+# Make data base, printed on Thu Dec 16 18:19:12 2021
 
 # Variables
 
+ 
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -24,7 +25,7 @@ LOCAL_GIT_DIRECTORY = C:\Users\jakob\AppData\Local\GitHubDesktop\app-2.9.6\resou
 # environment
 LOCALAPPDATA = C:\Users\jakob\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-2c03dd87-a506-4def-8253-af2e2167b2ff-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-c17f45f0-7ac0-40c7-8d56-9ceeecfd0328-sock
 # environment
 VSCODE_CWD = C:\Users\jakob\AppData\Local\GitHubDesktop\app-2.9.6
 # environment
@@ -38,7 +39,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2348_GJZPITLAPNBZCJLY
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_12076_CDTKPTOORVGISVYM
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -87,6 +88,7 @@ MFLAGS = -pqrR
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+ 
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST := makefile
 # automatic
@@ -94,7 +96,7 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2348
+VSCODE_PID = 12076
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -212,6 +214,7 @@ PROCESSOR_REVISION = a502
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 # variable set hash-table stats:
+ 
 # Load=99/1024=10%, Rehash=0, Collisions=12/126=10%
 
 # Pattern-specific Variable Values
@@ -220,9 +223,10 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 
 # Directories
 
-# . (device 2430488182, inode 22517998136862088): 15 files, no impossibilities.
+ 
+# . (device 2430488182, inode 16044073672516036): 18 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -235,7 +239,7 @@ prog:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 2):
-	gcc -Wall  main.c heapsort.c selection_sort.c array_factory.c -o sort_calculator.exe
+	gcc -Wall  main.c heapsort.c mergesort.c selection_sort.c array_factory.c -o sort_calculator.exe
 
 # Not a target:
 .DEFAULT:
@@ -253,7 +257,7 @@ all:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-16 05:59:05.1435723
+#  Last modified 2021-12-16 18:19:12.2845358
 #  File has been updated.
 #  Successfully updated.
 
@@ -265,12 +269,12 @@ makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 20 / storage = 199 B / avg = 9 B
-# current buf: size = 8162 B / used = 199 B / count = 20 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 243 B / avg = 10 B
+# current buf: size = 8162 B / used = 243 B / count = 23 / avg = 10 B
 
-# strcache performance: lookups = 25 / hit rate = 20%
+# strcache performance: lookups = 28 / hit rate = 17%
 # hash-table stats:
-# Load=20/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Thu Dec 16 05:59:40 2021
+# Load=23/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Thu Dec 16 18:19:12 2021
 
  

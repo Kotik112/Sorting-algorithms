@@ -5,9 +5,9 @@
 #define RUN_TESTS 0
 
 /** Given an index in an array with a heap, return its parent index. */
-static int heap_node_parent(int child_idx) {
+/* static int heap_node_parent(int child_idx) {
     return (child_idx-1)/2;
-}
+}*/
 
 /** Given an index in an array with a heap, return its left child's index. */
 static int heap_node_left_child(int parent_idx) {

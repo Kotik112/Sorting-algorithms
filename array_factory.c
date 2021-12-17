@@ -39,4 +39,3 @@ int * create_almost_sorted_array_int(int array_len, int elements_to_ignore) {
     heap_sort(array, length);
     return array;
 }
-

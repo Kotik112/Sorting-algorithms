@@ -1,7 +1,7 @@
 /* 
 TODO:
-Kanske? Fixa arguments för programmet så att man kan göra flera beräkningar i rad.
-Om man inte matar in några argument så kan man då hoppa in till switch.
+- Fix memory leak.
+- Fix almost sorted array.
  */
 
 #include "heapsort.h"
@@ -12,9 +12,7 @@ Om man inte matar in några argument så kan man då hoppa in till switch.
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_ARRAY_SIZE 1000000000 // one billion.
-
-typedef enum{RAND, SORT, REV, ALMOST}array_type;
+#define MAX_ARRAY_SIZE 1000000000
 
 void print_menu(void) {
     printf("*****\t MAIN MENU \t*****\n\n");
@@ -52,7 +50,7 @@ void print_array(int * array, int length) {
 
 int main(int argc, char **argv) {
     /* Place holder for current working array. */
-    int * current_array = (int *) malloc(sizeof(int) * MAX_ARRAY_SIZE);
+    int * current_array = NULL;
     /* Place holder for length of current working array. */
     int array_len;
     /* Variables for storing the time delta for the storting algorithms. */
@@ -66,6 +64,10 @@ int main(int argc, char **argv) {
         {
         /* Create random array. */
         case 1:
+            if (current_array) {
+                printf("Choose algorithm.\n");
+                break;
+            }
             array_len = get_int_input("Input the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
@@ -77,6 +79,10 @@ int main(int argc, char **argv) {
 
         /* Create sorted array. */
         case 2:
+            if (current_array) {
+                printf("Choose algorithm.\n");
+                break;
+            }
             array_len = get_int_input("Input the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
@@ -88,6 +94,10 @@ int main(int argc, char **argv) {
 
         /* Create reversed array. */
         case 3:
+            if (current_array) {
+                printf("Choose algorithm.\n");
+                break;
+            }    
             array_len = get_int_input("Input the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
@@ -99,6 +109,10 @@ int main(int argc, char **argv) {
 
         /* Create "almost" sorted array. */
         case 4:
+            if (current_array) {
+                printf("Choose algorithm.\n");
+                break;
+            }
             array_len = get_int_input("Enter the length of the array: ");
             if (array_len > MAX_ARRAY_SIZE) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
@@ -115,40 +129,64 @@ int main(int argc, char **argv) {
 
         /* Sort using 'Heap Sort' */
         case 5:
+            if (!current_array) {
+                printf("Choose array type.\n");
+                break;
+            }
             start_t = (double) clock();
             heap_sort(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
         /* Sort using 'Selection Sort' - Unn*/
         case 6:
+            if (!current_array) {
+                printf("Choose array type.\n");
+                break;
+            }
             start_t = (double) clock();
             selection_sort_int(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'Selection sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            current_array = NULL;
             //print_array(current_array, array_len);
             break;
 
         /* Sort using 'Merge Sort' */
         case 7:
+            if (!current_array) {
+                printf("Choose array type.\n");
+                break;
+            }
             start_t = (double) clock();
-            merge_sort(current_array, current_array[0], array_len);
+            merge_sort(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'Merge Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            current_array = NULL;
             break;
 
         /* Sort using 'qsort()' */
         case 8:
+            if (!current_array) {
+                printf("Choose array type.\n");
+                break;
+            }
             start_t = (double) clock();
             qsort(current_array, array_len, sizeof(int), cmpfunc);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
             printf("Time taken to sort %d elements using 'qsort()': %lf seconds.\n", array_len, (double) total_t / 1000);
+            free(current_array);
+            current_array = NULL;
             break;
 
         /* Exit program. */
