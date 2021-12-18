@@ -33,9 +33,23 @@ int * create_reverse_sorted_array_int(int array_len) {
     return array;
 }
 
-int * create_almost_sorted_array_int(int array_len, int elements_to_ignore) {
+int * create_almost_sorted_array_int(int array_len) {
     int * array = create_random_array_int(array_len);
-    int length = array_len - elements_to_ignore;
-    heap_sort(array, length);
+    heap_sort(array, array_len);
+    for (int i = 0, swap = 0; i < array_len; i++, swap++) {
+        if (swap == 5 && array[i - 1] != array[i]) {
+            int temp = 0;
+            temp = array[i];
+            array[i] = array[i - 1];
+            array[i - 1] = temp;
+            swap = 0;
+        }
+    }
+    return array;
+}
+
+int* create_almost_sorted(int array_len) {
+    int * array = create_random_array_int(array_len);
+    qsort(array, array_len * 0.8, sizeof(int), cmp_int);
     return array;
 }

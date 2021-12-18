@@ -118,13 +118,8 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
                 return -1;
             }
-            int elements_to_ignore = get_int_input("Enter the number of elements to not sort from the end of the array: ");
-            if (elements_to_ignore >= array_len) {
-                fprintf(stderr, "Error! Elements to ignore cannot exceed the array length.\n");
-                return -1;
-            }
-            current_array = create_almost_sorted_array_int(array_len, elements_to_ignore);
-            //print_array(current_array, array_len);
+            current_array = create_almost_sorted(array_len);
+            print_array(current_array, array_len);
             break;
 
         /* Sort using 'Heap Sort' */
