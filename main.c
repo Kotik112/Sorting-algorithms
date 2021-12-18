@@ -119,7 +119,7 @@ int main(int argc, char **argv) {
                 return -1;
             }
             current_array = create_almost_sorted(array_len);
-            print_array(current_array, array_len);
+            //print_array(current_array, array_len);
             break;
 
         /* Sort using 'Heap Sort' */
