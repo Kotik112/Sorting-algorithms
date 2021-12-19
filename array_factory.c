@@ -4,11 +4,12 @@
 #include "heapsort.h"
 #include "array_factory.h"
 
+/* Function for qsort() to sort an array in ascending order. */
 static int cmp_int( const void *a, const void *b) {
     return *(int*)a - *(int*)b;
 }
 
-
+/* Function for qsort() to sort an array in descending order. */
 static int reverse_cmp_int( const void *a, const void *b) {
     return *(int*)b - *(int*)a;
 }

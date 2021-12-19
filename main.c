@@ -36,7 +36,7 @@ int get_int_input(const char* text) {
     return atoi(input);
 }
 
-/* Comparison function for qsort(). */
+/* Function for qsort() to sort an array in ascending order. */
 int cmpfunc( const void *a, const void *b) {
     return *(int*)a - *(int*)b;
 }
@@ -118,7 +118,7 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "The size of the array cannot exceeen 1 billion.\n");
                 return -1;
             }
-            current_array = create_almost_sorted(array_len);
+            current_array = create_almost_sorted_array_int(array_len);
             //print_array(current_array, array_len);
             break;
 
@@ -132,7 +132,7 @@ int main(int argc, char **argv) {
             heap_sort(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'Heap Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'Heap Sort': %0.3f seconds.\n", array_len, (double) total_t / 1000);
             free(current_array);
             current_array = NULL;
             //print_array(current_array, array_len);
@@ -148,7 +148,7 @@ int main(int argc, char **argv) {
             selection_sort_int(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'Selection sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'Selection sort': %0.3f seconds.\n", array_len, (double) total_t / 1000);
             free(current_array);
             current_array = NULL;
             //print_array(current_array, array_len);
@@ -164,7 +164,7 @@ int main(int argc, char **argv) {
             merge_sort(current_array, array_len);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'Merge Sort': %f seconds.\n", array_len, (double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'Merge Sort': %0.3f seconds.\n", array_len, (double) total_t / 1000);
             free(current_array);
             current_array = NULL;
             break;
@@ -179,7 +179,7 @@ int main(int argc, char **argv) {
             qsort(current_array, array_len, sizeof(int), cmpfunc);
             end_t = (double) clock();
             total_t = difftime(end_t, start_t);
-            printf("Time taken to sort %d elements using 'qsort()': %lf seconds.\n", array_len, (double) total_t / 1000);
+            printf("Time taken to sort %d elements using 'qsort()': %0.3f seconds.\n", array_len, (double) total_t / 1000);
             free(current_array);
             current_array = NULL;
             break;
